@@ -17,10 +17,10 @@ namespace Restaurant
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
+                LoginWindow loginWindow = new LoginWindow();
+                loginWindow.DataContext = new LoginWindowViewModel(loginWindow);
+                desktop.MainWindow = loginWindow;
+
             }
 
             base.OnFrameworkInitializationCompleted();

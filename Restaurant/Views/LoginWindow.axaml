@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:vm="using:Restaurant.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Restaurant.Views.LoginWindow"
+        Title="LoginWindow">
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:LoginWindowViewModel/>
+	</Design.DataContext>
+
+<Window.Styles>
+	<Style Selector="Button">
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="Width" Value="125"/>
+	</Style>
+	<Style Selector="TextBox, Button">
+		<Setter Property="Margin" Value="10"/>
+	</Style>
+	<Style Selector="TextBlock">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+	</Style>
+	<Style Selector="StackPanel">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Width" Value="320"/>
+	</Style>
+</Window.Styles>
+	
+	<StackPanel>
+		<TextBlock Classes="test">Логин</TextBlock>
+		<TextBox Text="{Binding Login}"></TextBox>
+		<TextBlock Classes="test">Пароль</TextBlock>
+		<TextBox Text="{Binding Password}"></TextBox>
+		<Button Command="{Binding AuthCommand}">Вход</Button>
+		<TextBlock Text="{Binding Message}"></TextBlock>
+	</StackPanel>
+	
+</Window>
