@@ -15,6 +15,17 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+	<DockPanel>
+		<TextBlock DockPanel.Dock="Top" HorizontalAlignment="Right" Text="{Binding UserName}"></TextBlock>
+		<ListBox Items="{Binding Ingridients}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Text="{Binding Name}"></TextBlock>
+						<TextBlock Text="{Binding Amount}"></TextBlock>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</DockPanel>
 </Window>
