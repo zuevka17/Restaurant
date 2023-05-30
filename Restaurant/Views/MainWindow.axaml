@@ -16,13 +16,14 @@
     </Design.DataContext>
 
 	<DockPanel>
+        <Button Command="{Binding EditCommand}">EEDDIITT</Button>
 		<TextBlock DockPanel.Dock="Top" HorizontalAlignment="Right" Text="{Binding UserName}"></TextBlock>
-		<ListBox Items="{Binding Ingridients}">
+		<ListBox Items="{Binding Ingridients}" SelectedItem="{Binding SelectedIngridient}" SelectionMode="Single">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<StackPanel>
-						<TextBlock Text="{Binding Name}"></TextBlock>
-						<TextBlock Text="{Binding Amount}"></TextBlock>
+						<TextBlock Text="{Binding Name}"/>
+					    <TextBlock Text="{Binding Amount}"/>
 					</StackPanel>
 				</DataTemplate>
 			</ListBox.ItemTemplate>

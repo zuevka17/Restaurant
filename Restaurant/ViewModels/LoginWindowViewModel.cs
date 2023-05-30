@@ -19,6 +19,7 @@ namespace Restaurant.ViewModels
         }
         public LoginWindow Owner { get; set; }
         public ReactiveCommand<Unit,Unit> AuthCommand { get; }
+        public LoginWindowViewModel() { }
         public LoginWindowViewModel(LoginWindow _owner)
         {
             Owner = _owner;
