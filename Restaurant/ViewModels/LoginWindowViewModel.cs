@@ -36,10 +36,8 @@ namespace Restaurant.ViewModels
             else
             {
                 Message = string.Empty;
-                MainWindow mainWindow = new MainWindow()
-                {
-                    DataContext = new MainWindowViewModel(user)
-                };
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.DataContext = new MainWindowViewModel(user,mainWindow);
                 mainWindow.Show();
                 Owner.Close();
             }

@@ -1,8 +1,12 @@
-﻿using ReactiveUI;
+﻿
+using Microsoft.EntityFrameworkCore;
+using ReactiveUI;
 using Restaurant.Models;
+using Restaurant.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;

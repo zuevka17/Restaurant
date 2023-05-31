@@ -16,7 +16,11 @@
     </Design.DataContext>
 
 	<DockPanel>
-        <Button Command="{Binding EditCommand}">EEDDIITT</Button>
+		<StackPanel DockPanel.Dock="Left" VerticalAlignment="Center">
+		<Button Command="{Binding EditCommand}">Изменить</Button>
+		<Button Command="{Binding AddCommand}">Добавить</Button>
+		</StackPanel>
+		
 		<TextBlock DockPanel.Dock="Top" HorizontalAlignment="Right" Text="{Binding UserName}"></TextBlock>
 		<ListBox Items="{Binding Ingridients}" SelectedItem="{Binding SelectedIngridient}" SelectionMode="Single">
 			<ListBox.ItemTemplate>

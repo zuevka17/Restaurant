@@ -12,6 +12,7 @@ namespace Restaurant.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        RestaurantContext restaurantContext = new RestaurantContext();
         public ObservableCollection<Ingridient> _ingridients;
         public ObservableCollection<Ingridient> Ingridients
         {
@@ -20,7 +21,6 @@ namespace Restaurant.ViewModels
         }
 
         public Ingridient SelectedIngridient { get; set; }
-
         private User user { get; set; }
 
         private string _userName;
@@ -31,24 +31,41 @@ namespace Restaurant.ViewModels
         }
         public MainWindowViewModel()
         { 
-            RestaurantContext restaurantContext = new RestaurantContext();
             restaurantContext.Users.Load();
             restaurantContext.Ingridients.Load();
             Ingridients = restaurantContext.Ingridients.Local.ToObservableCollection();
             EditCommand = ReactiveCommand.Create(EditIngridient);
+            AddCommand = ReactiveCommand.Create(AddIngridient);
         }
-        public ReactiveCommand<Unit,Unit> EditCommand { get; }
+        public ReactiveCommand<Unit,Unit> EditCommand { get; set; }
+        public ReactiveCommand<Unit,Unit> AddCommand { get; set; }
         public MainWindow Owner { get; set; }
-        public void EditIngridient()
+        public async void EditIngridient( )
         {
             EditWindowIngridient editWindowIngridient = new EditWindowIngridient();
             editWindowIngridient.DataContext = new EditWindowIngridientViewModel(SelectedIngridient);
-            editWindowIngridient.Show();
+            await editWindowIngridient.ShowDialog(Owner);
+            var GoodsBack = Ingridients;
+            Ingridients = null;
+            Ingridients = GoodsBack;
+           
         }
-        public MainWindowViewModel(User user) : this()
+        public async void AddIngridient( )
+        {
+            restaurantContext.Ingridients.Add(new Ingridient());
+            var lastItem = Ingridients.LastOrDefault();
+            EditWindowIngridient editWindowIngridient = new EditWindowIngridient();
+            editWindowIngridient.DataContext = new EditWindowIngridientViewModel(lastItem);
+            await editWindowIngridient.ShowDialog(Owner);
+            var GoodsBack = Ingridients;
+            Ingridients = null;
+            Ingridients = GoodsBack;
+        }
+        public MainWindowViewModel(User user, MainWindow owner) : this()
         { 
             this.user = user;
             _userName = $"Текущий пользователь: {user.Login} 😘😘😘";
+            Owner = owner;
         }
     }
 }
