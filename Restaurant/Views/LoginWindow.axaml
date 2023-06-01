@@ -36,7 +36,7 @@
 		<TextBlock Classes="test">Логин</TextBlock>
 		<TextBox Text="{Binding Login}"></TextBox>
 		<TextBlock Classes="test">Пароль</TextBlock>
-		<TextBox Text="{Binding Password}"></TextBox>
+		<TextBox Text="{Binding Password}" PasswordChar="*"></TextBox>
 		<Button Command="{Binding AuthCommand}">Вход</Button>
 		<TextBlock Text="{Binding Message}"></TextBlock>
 	</StackPanel>

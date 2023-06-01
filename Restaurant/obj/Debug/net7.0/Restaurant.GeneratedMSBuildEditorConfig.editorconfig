@@ -17,6 +17,9 @@ build_property.ProjectDir = C:\Users\student\Documents\Restaurant\Restaurant\
 [C:/Users/student/Documents/Restaurant/Restaurant/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/student/Documents/Restaurant/Restaurant/Views/EditWindowIngridient.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/student/Documents/Restaurant/Restaurant/Views/LoginWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
