@@ -14,10 +14,10 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<vm:EditWindowIngridientViewModel/>
 	</Design.DataContext>
-	<StackPanel>
-		<TextBlock Text="Название"/>
-		<TextBox Text="{Binding ingridient.Name}"/>
-		<TextBlock Text="Количество"/>
-		<TextBox Text="{Binding ingridient.Amount}"/>
-	</StackPanel>
+		<StackPanel>
+			<TextBlock Text="Название"/>
+			<TextBox Text="{Binding ingridient.Name}"/>
+			<TextBlock Text="Количество"/>
+			<TextBox Text="{Binding ingridient.Amount}"/>
+		</StackPanel>
 </Window>
