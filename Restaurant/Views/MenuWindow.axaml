@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Restaurant.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Restaurant.Views.MenuWindow"
+        x:DataType="vm:MenuWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Restaurant">
+
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MenuWindowViewModel/>
+	</Design.DataContext>
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="Width" Value="100"/>
+		</Style>
+	</Window.Styles>
+
+	<DockPanel>
+		<TextBlock DockPanel.Dock="Top" HorizontalAlignment="Right" Text="{Binding UserName}"></TextBlock>
+		<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
+			<Button Command="{Binding AddCommand}">Добавить</Button>
+			<Button Command="{Binding EditCommand}">Изменить</Button>
+			<Button Command="{Binding SaveCommand}">Сохранить</Button>
+			<Button Command="{Binding DelCommand}">Удалить</Button>
+		</StackPanel>
+		<ListBox Items="{Binding Menus}" SelectedItem="{Binding SelectedMenu}" SelectionMode="Single">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Text="{Binding Name}"/>
+						<TextBlock Text="{Binding Price}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</DockPanel>
+</Window>

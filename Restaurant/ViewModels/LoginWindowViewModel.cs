@@ -19,6 +19,7 @@ namespace Restaurant.ViewModels
         }
         public LoginWindow Owner { get; set; }
         public ReactiveCommand<Unit,Unit> AuthCommand { get; }
+        public LoginWindowViewModel() { }
         public LoginWindowViewModel(LoginWindow _owner)
         {
             Owner = _owner;
@@ -35,11 +36,9 @@ namespace Restaurant.ViewModels
             else
             {
                 Message = string.Empty;
-                MainWindow mainWindow = new MainWindow()
-                {
-                    DataContext = new MainWindowViewModel()
-                };
-                mainWindow.Show();
+                MenuWindow menuWindow = new MenuWindow();
+                menuWindow.DataContext = new MenuWindowViewModel(user, menuWindow);
+                menuWindow.Show();
                 Owner.Close();
             }
         }
