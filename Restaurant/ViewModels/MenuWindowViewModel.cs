@@ -34,8 +34,8 @@ namespace Restaurant.ViewModels
             restaurantContext.Users.Load();
             restaurantContext.Menus.Load();
             Menus = restaurantContext.Menus.Local.ToObservableCollection();
-            EditCommand = ReactiveCommand.Create(EditIngridient);
-            AddCommand = ReactiveCommand.Create(AddIngridient);
+            EditCommand = ReactiveCommand.Create(EditMenu);
+            AddCommand = ReactiveCommand.Create(AddMenu);
             SaveCommand = ReactiveCommand.Create(SaveDbChabges);
             DelCommand = ReactiveCommand.Create(DeleteSelected);
         }
@@ -44,7 +44,7 @@ namespace Restaurant.ViewModels
         public ReactiveCommand<Unit, Unit> SaveCommand { get; set; }
         public ReactiveCommand<Unit, Unit> DelCommand { get; set; }
         public MenuWindow Owner { get; set; }
-        public async void EditIngridient()
+        public async void EditMenu()
         {
             EditWindowMenu editWindowMenu = new EditWindowMenu();
             editWindowMenu.DataContext = new EditWindowMenuViewModel(SelectedMenu);
@@ -54,7 +54,7 @@ namespace Restaurant.ViewModels
             Menus = GoodsBack;
 
         }
-        public async void AddIngridient()
+        public async void AddMenu()
         {
             restaurantContext.Menus.Add(new Menu());
             var lastItem = Menus.LastOrDefault();

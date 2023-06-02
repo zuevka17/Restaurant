@@ -12,22 +12,22 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Restaurant
-build_property.ProjectDir = C:\Users\Kirill\Desktop\git\Restaurant\
+build_property.ProjectDir = C:\Users\student\Desktop\Practika\pr\Restaurant\
 
-[C:/Users/Kirill/Desktop/git/Restaurant/App.axaml]
+[C:/Users/student/Desktop/Practika/pr/Restaurant/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Kirill/Desktop/git/Restaurant/Views/EditWindowIngridient.axaml]
+[C:/Users/student/Desktop/Practika/pr/Restaurant/Views/EditWindowIngridient.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Kirill/Desktop/git/Restaurant/Views/EditWindowMenu.axaml]
+[C:/Users/student/Desktop/Practika/pr/Restaurant/Views/EditWindowMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Kirill/Desktop/git/Restaurant/Views/LoginWindow.axaml]
+[C:/Users/student/Desktop/Practika/pr/Restaurant/Views/LoginWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Kirill/Desktop/git/Restaurant/Views/MainWindow.axaml]
+[C:/Users/student/Desktop/Practika/pr/Restaurant/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Kirill/Desktop/git/Restaurant/Views/MenuWindow.axaml]
+[C:/Users/student/Desktop/Practika/pr/Restaurant/Views/MenuWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
